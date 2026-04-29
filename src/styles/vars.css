@@ -1,5 +1,19 @@
+@font-face {
+    font-family: 'Mustang';
+    src: url(../fonts/Black\ Mustang.ttf);
+}
+
+@font-face {
+    font-family: 'Highrise';
+    src: url(../fonts/HighriseFont-Bold-Demo.otf);
+}
+
 :root{
     --bg-color: #0F0F0F;
     --tech-blue: #3B82F6;
     --golden-: #D4AF37;
-}
+    --font-1:'Bebas Neue', sans-serif;
+    --font-2:'Syne', sans-serif;
+    --font-3:'Mustang', sans-serif;
+    --font-4:'Highrise', sans-serif;
+}  
