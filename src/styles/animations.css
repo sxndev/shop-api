@@ -1,0 +1,10 @@
+@keyframes brightness {
+    0% { filter: drop-shadow(0 0 0);}
+    50% { filter: drop-shadow(0 0 5px);}
+    100% { filter: drop-shadow(0 0 0);}
+}
+
+@keyframes loading {
+    0%{transform: rotate(0);}
+    100%{transform: rotate(360deg);}
+}
