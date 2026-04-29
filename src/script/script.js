@@ -1,42 +1,44 @@
-const listProducts = document.getElementById("products-list");
-const status = document.getElementById("status");
+// const listProducts = document.getElementById("products-list");
+const listProducts = document.getElementById('products-list');
+const apiStatus = document.getElementById("status");
+const main = document.getElementById("main");
 
-status.innerHTML += `<p class="loading">Carregando produtos... <br> </p>`;
+// apiStatus.innerHTML += `<p class="loading">Carregando produtos... <br> </p>`;
+
 async function getAPiInfo() {
   const url = "https://fakestoreapi.com/products";
-  
-  try { 
+
+  try {
     const response = await fetch(url);
     const products = await response.json();
 
-    const mensClothing =  products.filter(
+    const mensClothing = products.filter(
       (product) => product.category === "men's clothing",
     );
-    const womensClothing =  products.filter(
+    const womensClothing = products.filter(
       (product) => product.category === "women's clothing",
     );
-    const jewelery =  products.filter(
-      (product) => product.category === "jewelery",   
+    const jewelery = products.filter(
+      (product) => product.category === "jewelery",
     );
-    const eletronics =  products.filter(
-      (product) => product.category === "electronics",
+    const eletronics = products.filter(
+      (product) => product.category === "electronics",   
     );
-    status.innerHTML = ""; 
-     products.forEach((product) => {
+
+    // console.log(mensClothing[0])
+    products.forEach((product) => {
       listProducts.innerHTML += `          
             <li class="product">
                 <img src="${product.image}" alt="Product Image" class="product-img"> 
                 <div class="product-info">
-                    <h2 class="product-name">${product.title}</h2>
-                    <p class="product-price">R$${product.price}</p>
-                </div>   
+                  <h2 class="product-name">${product.title}</h2>
+                  <a href="">Ver</a>   
+                </div>    
             </li>`;
     });
   } catch (error) {
-    main.innerHTML = `<p class="error">Ocorreu um erro ao carregar os produtos.<br> Por favor, tente novamente mais tarde. <br>😥</p>`;
     console.log(error);
   }
 }
 
 getAPiInfo();
- 

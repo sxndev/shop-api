@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+  .product:hover .product-img {
+    filter: none;
+  }
+
+  .product:hover {
+    transform: scale(1, 1);
+  }
+}
+  
