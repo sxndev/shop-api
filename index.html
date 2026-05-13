@@ -15,33 +15,52 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400..800&display=swap"
       rel="stylesheet"
     />
-    <title>Shop API</title>
+    <title>Gold Shop</title>
   </head>
   <body>
     <header>
       <div id="logo">
-        <h1>Shop API</h1>
+        <h1>Gold Shop</h1>
       </div>
-      <nav>
+      <nav id="nav">
         <ul>
-          <li><a href="#main">Início</a></li>
-          <li id="categories">Categorias</li>
-          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Início</a></li>
+          <li id="categories-btn">
+            Categorias
+            <nav>
+              <ul id="categories-list">
+                <li id="mens-clothing-selector">
+                  <a href="#products-list"> Roupas masculinas </a>
+                </li>
+                <li id="womens-clothing-selector">
+                  <a href="#products-list"> Roupas femininas </a>
+                </li>
+                <li id="jewelery-selector">
+                  <a href="#products-list"> Joias </a>
+                </li>
+                <li id="electronics-selector">
+                  <a href="#products-list"> Eletrônicos </a>
+                </li>
+                <li id="all-items">
+                  <a href="#products-list"> Ver tudo </a>
+                </li>
+                <li id="close">Fechar</li>
+              </ul>
+            </nav>
+          </li>
+          <li><a href="#developer">Sobre nós</a></li>
         </ul>
       </nav>
     </header>
     <main id="main">
-      <section id="welcome-section">
-        <div id="animation-background">
-          <div id="welcome-mensage">
-            <h2>Bem Vindo a <br /><span>Shop api</span></h2>
-            <p>A sua mais nova loja favorita</p>
-          </div>
-        </div>
-      </section>
-      <h3 id="products-list-title">Lista de produtos:</h3>
       <ul id="products-list"></ul>
     </main>
-    <script src="src/script/script.js"></script>
+    <footer>
+      <p>Desenvolvido por</p>
+      <p id="developer">Nicolas Marcos da Silva</p>
+      <p>Desenvolvedor FullStack em Formação</p>
+      <p>Sistema em desenvolvimento</p>
+    </footer>
+    <script type="module" src="./src/script/script.js"></script>
   </body>
 </html>

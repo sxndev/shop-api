@@ -1,13 +1,50 @@
 @keyframes loading {
-    0%{transform: rotate(0);}
-    100%{transform: rotate(360deg);}
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.product:hover .product-img {
-  filter: drop-shadow(0 0 3px);
-  cursor: pointer;
+@keyframes letterAnimation {
+  0%,
+  100% {
+    top: 0;
+    text-shadow: 0px 10px #383737;
+  }
+  50% {
+    top: 10px;
+    text-shadow: none;
+  }
+}
+.letter-animation {
+  animation: letterAnimation 1.5s infinite ease-in-out;
 }
 
-.product:hover {
-  transform: scale(1.03, 1.03);
+.letter-animation:nth-child(1) {
+  animation-delay: 0s;
+}
+.letter-animation:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.letter-animation:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.letter-animation:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.letter-animation:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.letter-animation:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.letter-animation:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.product-btn:hover{
+  background-color: var(--golden);
+  color: var(--bg-color-2);
 }

@@ -1,4 +1,5 @@
 @media (max-width: 768px) {
+ 
   .product:hover .product-img {
     filter: none;
   }
@@ -6,5 +7,18 @@
   .product:hover {
     transform: scale(1, 1);
   }
-}
-  
+
+  .product-info {
+    display: flex;
+    flex-direction: column;    
+  }
+} 
+   
+@media (max-width: 500px) {
+  #categories-list{
+    overflow: scroll hidden;
+    scrollbar-color: white transparent;
+    scrollbar-width: thin;
+  }
+
+} 

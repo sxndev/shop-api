@@ -14,7 +14,7 @@ ul{
 }
 
 a{
-    color: black;
+    color: var(--color-1);
     text-decoration: none;
 }
 

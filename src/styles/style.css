@@ -2,22 +2,37 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
-  width: 100vw;
+  min-height: 60px;
+  height: 12vh;
+  width: 100%;
   position: fixed;
   padding: 10px 20px;
-  background-color: white;
-  z-index: 100;
-  box-shadow: 0px 0px 50px 60px;
+  background-color: var(--bg-color);
+  box-shadow: 0px 30px 50px  black;
+  z-index: 99;
+  color: var(--golden);
+} 
+
+#nav {
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 
-header nav ul {
+#nav ul:first-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   gap: 10px;
   font-size: clamp(12px, 2vw, 20px);
-  text-wrap: nowrap;
+  text-wrap: nowrap; 
+  color: var(--color-1);
+  max-height: 10vh; 
+}
+
+#categories-btn{
+  cursor: pointer;
 }
 
 #logo {
@@ -33,14 +48,51 @@ header nav ul {
 }
 
 header h1 {
-  font-size: clamp(16px, 3vw, 40px);
+  font-size: clamp(16px, 3vw, 40px); 
   text-wrap: nowrap;
 }
+
+#categories-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 40px;
+  height: 10vh;
+  width: 100%;
+  /* max-width: 100vw; */
+  right: 0;
+  top: 12vh;
+  position: absolute; 
+  z-index: 100; 
+  font-size: clamp(8px, 2vw, 20px);
+  background-color: var(--bg-color-3);  
+  opacity: 0;
+  transition: opacity 1s ease-in-out; 
+}
+
+#categories-list.active{ 
+  opacity: 1;
+}
+
+#categories-list li {
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+}
+
+#categories-list li a{
+  transition: color 0.3s ease-in-out;
+}
+#categories-list li:hover a{
+  cursor: pointer;
+  color: var(--golden);
+}
+
 main {
-  background-color: var(--bg-color);
-  color: white;
-  padding-top: 10vh;
+  background-color: var(--bg-color-2); 
+  color: var(--color-1);
   min-height: 100vh;
+  padding-top: 10vh;
 }
 
 main > h2 {
@@ -49,8 +101,6 @@ main > h2 {
 }
 
 #welcome-section {
-  /* display: grid;; */
-  /* grid-template-columns: repeat(2, 1fr); */
   display: flex;
   justify-content: center;
   padding-top: 8vh;
@@ -66,18 +116,20 @@ main > h2 {
 }
 
 #welcome-mensage h2 {
-  font-size: clamp(10px, 5vw, 65px);
+  font-size: clamp(10px, 5vw, 55px);
+  cursor: default;
 }
 
 #welcome-mensage span {
   width: 100%;
-  font-size: clamp(10px, 20vw, 250px);
-  text-wrap: nowrap;
-  letter-spacing: 15px;
+  font-size: clamp(10px, 25vw, 200px);
   font-family: var(--font-4);
-  text-shadow: 10px 10px 1px rgb(56, 55, 55);
-  font-style: italic;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  font-style: italic; 
+  color: var(--golden);
 }
+
 #welcome-section p {
   font-size: clamp(20px, 6vw, 35px);
 }
@@ -86,7 +138,6 @@ main > h2 {
   width: 100vw;
   height: 100vh;
 }
-
 
 #products-list-title{
   font-size: clamp(20px, 4vw, 40px);
@@ -98,8 +149,9 @@ main > h2 {
 
 #products-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));  
+  place-items: center;
+  gap: 50px;
   height: 100%;
   width: 100%;
   padding: 50px;
@@ -109,19 +161,13 @@ main > h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 20px; */
   transition: 0.3s ease-out;
   min-height: 200px;
-  height: 300px;
+  height: 100%;
   max-height: 400px;
   width: 100%;
-}
-
-.product-name {
-  font-size: clamp(16px, 1vw, 24px);
-  max-height: 40px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 250px;
+  transition: ease-in-out 0.3s all;
 }
 
 .product-img {
@@ -129,32 +175,60 @@ main > h2 {
   border-radius: 20px 20px 0px 0px;
   padding: 20px;
   width: 100%;
-  min-height: 100%;
-  object-fit: contain;
-  transition: 0.6s all ease-in-out;
+  height: 50%;
+  object-fit: contain; 
+  transition: 0.6s all ease-in-out; 
+}
+
+.product-name {
+  font-size: clamp(12px, 3vw, 20px);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-family: var(--font-2);
 }
 
 .product-info {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  gap: 15px; 
   background-color: white;
   color: black;
-  padding: 20px;
+  padding: 20px; 
   width: 100%;
+  height: 50%;
   border-radius: 0px 0px 20px 20px;
 }
-
-.product a{
-  background-color: black;
-  color: white;
-  padding: 10px 30px ;
-  border-radius: 14px;
-  font-family: var(--font-1);
-  letter-spacing: 2px;
+.product-rate{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: var(--font-4);
+  font-size: clamp(18px, 3vw, 30px);
 }
-.error {
+.product-btn{
+  justify-self: end;
+  align-self: flex-end;
+  background-color: var(--bg-color-2);
+  color: var(--golden);
+  padding: 10px 40px ;
+  border-radius: 14px;
+  font-family: var(--font-2);
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+.mensage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -163,8 +237,18 @@ main > h2 {
   text-align: center;
   background-color: rgb(50, 50, 50);
   border-radius: 30px;
-  font-size: clamp(16px, 3vw, 30px);
+  font-size: clamp(16px, 3vw, 20px);
   font-family: var(--font-2), sans-serif;
+  width: 80%;
+  max-width: 300px;
+}
+
+.mensage button {
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
+  width: 100%;
+
 }
 
 .loading {
@@ -175,12 +259,31 @@ main > h2 {
   padding: 50px;
   text-align: center;
   font-size: clamp(16px, 3vw, 30px);
+  font-family: var(--font-1);
 }
 
 .loading::after {
   content: "↻";
   display: block;
   font-size: 80px;
-  animation: loading 1s ease-in-out infinite;
-  font-family: var(--font-1), sans-serif;
+  animation: loading 1s linear infinite;
 }
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--bg-color-3);
+  color: var(--color-1);
+  font-family: var(--font-2);
+  min-height: 60px;
+  max-height: 200px;
+  height: 100%;
+  font-size: clamp(12px, 3vw, 26px);
+  padding: 40px;
+  font-weight: bold;
+}
+footer p:nth-child(even){ 
+  color: var(--golden);
+} 

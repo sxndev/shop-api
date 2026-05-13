@@ -9,11 +9,14 @@
 }
 
 :root{
-    --bg-color: #0F0F0F;
+    --bg-color: #171717;
+    --bg-color-2:#1d1c1d;
+    --bg-color-3:#2c2c2c;
     --tech-blue: #3B82F6;
-    --golden-: #D4AF37;
+    --golden: #D4AF37;
+    --color-1:#F8F8F8;
     --font-1:'Bebas Neue', sans-serif;
-    --font-2:'Syne', sans-serif;
+    --font-2:'Syne', serif;
     --font-3:'Mustang', sans-serif;
     --font-4:'Highrise', sans-serif;
 }  
