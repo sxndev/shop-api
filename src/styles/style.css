@@ -1,8 +1,8 @@
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  min-height: 60px;
+  align-items: center; 
+  min-height: 70px;
   height: 12vh;
   width: 100%;
   position: fixed;
@@ -15,6 +15,7 @@ header {
 
 #nav {
   display: flex;
+  align-items: center;
   justify-content: center;
   height: 100%;
 }
@@ -103,31 +104,32 @@ main > h2 {
 #welcome-section {
   display: flex;
   justify-content: center;
-  padding-top: 8vh;
   text-align: center;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  padding: 10px;
+  padding-top: 8vh;
+
 }
 
 #welcome-mensage{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: start;
+  padding: 3vw;
+  width: 100%;
 }
 
 #welcome-mensage h2 {
-  font-size: clamp(10px, 5vw, 55px);
-  cursor: default;
+  font-size: clamp(32px, 6vw, 65px);
+  font-weight: bold;
 }
-
-#welcome-mensage span {
-  width: 100%;
-  font-size: clamp(10px, 25vw, 200px);
-  font-family: var(--font-4);
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  font-style: italic; 
+#gold-shop-title{
   color: var(--golden);
+  font-size: clamp(35px, 15vw, 100px);
+  font-family: var(--font-2);
+  color: var(--golden);
+  font-style: italic;
 }
 
 #welcome-section p {
@@ -155,6 +157,8 @@ main > h2 {
   height: 100%;
   width: 100%;
   padding: 50px;
+  scroll-margin-top: 80px;
+
 } 
 .product {
   display: flex;
@@ -175,6 +179,7 @@ main > h2 {
   border-radius: 20px 20px 0px 0px;
   padding: 20px;
   width: 100%;
+  min-height: 200px;
   height: 50%;
   object-fit: contain; 
   transition: 0.6s all ease-in-out; 
@@ -199,6 +204,7 @@ main > h2 {
   color: black;
   padding: 20px; 
   width: 100%;
+  min-height: 200px;
   height: 50%;
   border-radius: 0px 0px 20px 20px;
 }
@@ -278,11 +284,12 @@ footer{
   color: var(--color-1);
   font-family: var(--font-2);
   min-height: 60px;
-  max-height: 200px;
+  max-height: 300px;
   height: 100%;
-  font-size: clamp(12px, 3vw, 26px);
+  font-size: clamp(18px, 3vw, 26px);
   padding: 40px;
   font-weight: bold;
+  text-align: center;
 }
 footer p:nth-child(even){ 
   color: var(--golden);
