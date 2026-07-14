@@ -7,19 +7,22 @@
   }
 }
 
-@keyframes letterAnimation {
-  0%,
-  100% {
-    top: 0;
-    text-shadow: 0px 10px #383737;
-  }
-  50% {
-    top: 10px;
-    text-shadow: none;
-  }
-}
-
 .product-btn:hover{
   background-color: var(--golden);
   color: var(--bg-color-2);
+}
+
+@keyframes enterScreen {
+  0%{
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.enter-screen-animation{
+  animation: enterScreen;
 }

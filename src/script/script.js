@@ -3,10 +3,9 @@ async function getProducts() {
 
   try {
     const response = await fetch(url);
-    
-    if(!response.ok) throw new Error()
-    
-    
+
+    if (!response.ok) throw new Error();
+
     const products = await response.json();
 
     const mensClothing = products.filter(
@@ -41,7 +40,7 @@ async function getProducts() {
     const categoriesBtn = document.getElementById("categories-btn");
     const listProducts = document.getElementById("products-list");
 
-     products.forEach((product) => {
+    products.forEach((product) => {
       listProducts.innerHTML += `
             <li class="product">
                 <img src="${product.image}" alt="Product Image" class="product-img"> 
@@ -87,8 +86,10 @@ async function getProducts() {
 
     menuOptions.forEach((option, index) => {
       option.addEventListener("click", () => {
-        listProducts.innerHTML = ''
+        listProducts.innerHTML = "";
+
         const selected = categories[index];
+        
         selected.forEach((product) => {
           listProducts.innerHTML += `          
             <li class="product">
@@ -104,7 +105,9 @@ async function getProducts() {
         });
       });
     });
-    
+
+
+
   } catch (error) {
     main.innerHTML = ` 
     <div class="mensage">
@@ -114,19 +117,32 @@ async function getProducts() {
     `;
     console.log(error);
     const tryAgainBtn = document.getElementById("try-again-btn");
-    tryAgainBtn.addEventListener('click', () => {
-      main.innerHTML = loadMensage
-      getProducts()
-    })
+    tryAgainBtn.addEventListener("click", () => {
+      main.innerHTML = loadMensage;
+      getProducts();
+    });
   }
 }
 
 const main = document.getElementById("main");
 const loadMensage = `<div class="loading ">
   <p>Carregando produtos...</p>
-  </div>`
+  </div>`;
 
-
-  main.innerHTML = loadMensage;
+main.innerHTML = loadMensage;
 
 getProducts();
+
+// preciso terminar de fazer essa animação
+const observer = new IntersectionObserver((elements) => {
+  elements.forEach((element) => {
+    if (element.isIntersecting) {
+      element.target.classList.add("enter-screen-animation");
+    } else {
+      element.target.classList.remove("enter-screen-animation");
+    }
+  });
+}, {
+  threshold: 0.5,
+});
+
